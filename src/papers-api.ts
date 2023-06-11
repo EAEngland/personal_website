@@ -113,14 +113,14 @@ export interface Work {
 
 export type WorkType = "dataset" | "journal-article";
 
-export async function getWorks(author: string): Promise<Work[] | null> {
+export async function getWorks(author: string): Promise<Work[]> {
   const safeAuthor = encodeURI(author);
   let url = `https://api.crossref.org/works?query.author=${safeAuthor}`;
   const resp = await fetch(url, {
     method: "GET",
   }).then((r) => r.json());
   if (resp?.status !== "ok") {
-    return null;
+    throw new Error("status was not ok");
   } else {
     return (resp.message.items as Work[]).filter((p) => p.title !== undefined);
   }

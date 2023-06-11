@@ -46,53 +46,36 @@ function Paper(props: { pub: Work }) {
   );
 }
 
-function RenderPapers(props: {}) {
-  const [papers, setPapers] = useState<Work[]>();
-  useEffect(() => {
-    getWorks("Edith England").then((p) => {
-      if (p !== null) {
-        var seen: any = {};
-        setPapers(
-          p
-            .filter((p) => {
-              if (seen[p.DOI] === undefined) {
-                seen[p.DOI] = true;
-                return true;
-              } else {
-                return false;
-              }
-            })
-            .filter((p) => p.type === "journal-article")
-            .filter((p) =>
-              p.author.some(
-                (a) =>
-                  a.given?.toLowerCase() === "edith" &&
-                  a.family.toLowerCase() === "england"
-              )
-            )
-        );
-      }
-    });
-  }, []);
-  if (papers === undefined) {
-    return (
-      <div>
-        <LoadingSpinner message="Fetching papers, please wait" />
-      </div>
-    );
-  } else {
-    const paperEls = papers?.map((p) => <Paper key={p.DOI} pub={p} />);
-    return <div className={style.papers}>{paperEls}</div>;
-  }
+function RenderPapers(props: { papers: Work[] }) {
+  const paperEls = props.papers.map((p) => <Paper key={p.DOI} pub={p} />);
+  return <div className={style.papers}>{paperEls}</div>;
 }
 
-export const TAB: TabInfo = {
-  render: () => {
-    return (
-      <div>
-        Research goes here <RenderPapers />
-      </div>
-    );
+export const TAB: TabInfo<Work[]> = {
+  render: (papers) => {
+    return <RenderPapers papers={papers} />;
   },
   name: "Research",
+  fetchData: async () => {
+    const works = await getWorks("Edith England");
+    var seen: any = {};
+    return works
+      .filter((p) => {
+        if (seen[p.DOI] === undefined) {
+          seen[p.DOI] = true;
+          return true;
+        } else {
+          return false;
+        }
+      })
+      .filter((p) => p.type === "journal-article")
+      .filter((p) =>
+        p.author.some(
+          (a) =>
+            a.given?.toLowerCase() === "edith" &&
+            a.family.toLowerCase() === "england"
+        )
+      );
+  },
+  loadingMessage: "Fetching papers, please wait",
 };
