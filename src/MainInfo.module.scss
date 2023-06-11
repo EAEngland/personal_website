@@ -1,0 +1,8 @@
+.root {
+    display: flex;
+    flex-direction: row;
+
+    .pfp {
+        flex: 1 0 1;
+    }
+}
