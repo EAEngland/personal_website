@@ -3,6 +3,7 @@ import { TabInfo } from "../Types";
 import { Author, Work, getWorks } from "../papers-api";
 import style from "./Research.module.scss";
 import { expandEscapeCodes } from "../htmlUtil";
+import LoadingSpinner from "../widgets/LoadingSpinner";
 
 function RenderAuthor(props: { author: Author; last: boolean }) {
   return (
@@ -73,8 +74,16 @@ function RenderPapers(props: {}) {
       }
     });
   }, []);
-  const paperEls = papers?.map((p) => <Paper key={p.DOI} pub={p} />);
-  return <div className={style.papers}>{paperEls}</div>;
+  if (papers === undefined) {
+    return (
+      <div>
+        <LoadingSpinner message="Fetching papers, please wait" />
+      </div>
+    );
+  } else {
+    const paperEls = papers?.map((p) => <Paper key={p.DOI} pub={p} />);
+    return <div className={style.papers}>{paperEls}</div>;
+  }
 }
 
 export const TAB: TabInfo = {
