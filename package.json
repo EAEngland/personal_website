@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.18.1"
+    "@types/webpack-env": "^1.18.1",
+    "yaml-loader": "^0.8.0"
   }
 }

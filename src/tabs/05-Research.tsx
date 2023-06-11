@@ -1,32 +1,34 @@
 import { useEffect, useState } from "react";
-import { TabInfo } from "../Types";
+import { Publication, TabInfo } from "../Types";
 import { Author, Work, getWorks } from "../papers-api";
 import style from "./Research.module.scss";
 import { expandEscapeCodes } from "../htmlUtil";
 import LoadingSpinner from "../widgets/LoadingSpinner";
+import importAll from "../importAll";
 
-function RenderAuthor(props: { author: Author; last: boolean }) {
+function RenderAuthor(props: { author: string; last: boolean }) {
   return (
     <div>
       <h4>
-        <i>
-          {props.author.given} {props.author.family}
-        </i>
+        <i>{props.author}</i>
         {!props.last && ","}
       </h4>
     </div>
   );
 }
 
-function Paper(props: { pub: Work }) {
+function makePaperUrl(doi: string) {
+  return `https://dx.doi.org/${doi}`;
+}
+
+function Paper(props: { pub: Publication }) {
   const pub = props.pub;
-  const pubTitle = pub.title[0];
   return (
     <div className={style.paper}>
       <div>
-        <h2>{expandEscapeCodes(pubTitle)}</h2>
+        <h2>{pub.title}</h2>
         <h3>
-          <a href={pub.URL}>Journal</a>
+          <a href={makePaperUrl(pub.doi)}>Journal</a>
         </h3>
       </div>
       {pub.abstract && (
@@ -36,9 +38,9 @@ function Paper(props: { pub: Work }) {
         </div>
       )}
       <div className={style.authors}>
-        {pub.author.map((a, i) => (
+        {pub.authors.map((a, i) => (
           <div key={i}>
-            <RenderAuthor author={a} last={i === pub.author.length - 1} />
+            <RenderAuthor author={a} last={i === pub.authors.length - 1} />
           </div>
         ))}
       </div>
@@ -46,14 +48,19 @@ function Paper(props: { pub: Work }) {
   );
 }
 
-function RenderPapers(props: { papers: Work[] }) {
-  const paperEls = props.papers.map((p) => <Paper key={p.DOI} pub={p} />);
+function RenderPapers(props: { papers: Publication[] }) {
+  const paperEls = props.papers.map((p) => <Paper key={p.doi} pub={p} />);
   return <div className={style.papers}>{paperEls}</div>;
 }
 
+const PAPERS = importAll(
+  require.context("../publications", false, /\.(yaml|yml)$/)
+).map((p) => p as Publication);
+
 export const TAB: TabInfo<Work[]> = {
-  render: (papers) => {
-    return <RenderPapers papers={papers} />;
+  render: () => {
+    console.log("papers: ", PAPERS);
+    return <RenderPapers papers={PAPERS} />;
   },
   name: "Research",
   fetchData: async () => {

@@ -19,7 +19,12 @@ function Tabs(props: { curr: TabInfo; setTab: (tab: TabInfo) => any }) {
   const TABS = TabFiles.map((t) => {
     return t.TAB;
   }).map((t) => (
-    <Tab content={t.name} key={t.name} onClick={() => props.setTab(t)} />
+    <Tab
+      content={t.name}
+      active={t.name === props.curr.name}
+      key={t.name}
+      onClick={() => props.setTab(t)}
+    />
   ));
   const [tabData, setTabData] = useState<{ [k: string]: TabDataFetch<any> }>(
     {}
