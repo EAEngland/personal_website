@@ -3,3 +3,19 @@
     flex-direction: row;
     gap: 5px;
 }
+
+.papers {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.paper {
+    padding: 3px;
+}
+
+.abstract {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}

@@ -98,7 +98,7 @@ export interface WorkLink {
 export interface Work {
   institution?: Institution;
   DOI: string;
-  type: string;
+  type: WorkType;
   created: Date;
   author: Author[];
   link?: WorkLink[];
