@@ -19,7 +19,6 @@ export interface Publication {
   title: string;
   abstract: Markdown;
   about?: Markdown;
-  url: string;
   published: PubDate;
   doi: string;
   journal: string;

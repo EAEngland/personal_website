@@ -5,6 +5,7 @@ import style from "./Research.module.scss";
 import { expandEscapeCodes } from "../htmlUtil";
 import LoadingSpinner from "../widgets/LoadingSpinner";
 import importAll from "../importAll";
+import ReactMarkdown from "react-markdown";
 
 function RenderAuthor(props: { author: string; last: boolean }) {
   return (
@@ -34,7 +35,7 @@ function Paper(props: { pub: Publication }) {
       {pub.abstract && (
         <div className={style.abstract}>
           <h3>Abstract</h3>
-          {pub.abstract}
+          <ReactMarkdown>{pub.abstract}</ReactMarkdown>
         </div>
       )}
       <div className={style.authors}>
@@ -55,34 +56,11 @@ function RenderPapers(props: { papers: Publication[] }) {
 
 const PAPERS = importAll(
   require.context("../publications", false, /\.(yaml|yml)$/)
-).map((p) => p as Publication);
+).map((p) => p.default as Publication);
 
-export const TAB: TabInfo<Work[]> = {
+export const TAB: TabInfo = {
   render: () => {
-    console.log("papers: ", PAPERS);
     return <RenderPapers papers={PAPERS} />;
   },
   name: "Research",
-  fetchData: async () => {
-    const works = await getWorks("Edith England");
-    var seen: any = {};
-    return works
-      .filter((p) => {
-        if (seen[p.DOI] === undefined) {
-          seen[p.DOI] = true;
-          return true;
-        } else {
-          return false;
-        }
-      })
-      .filter((p) => p.type === "journal-article")
-      .filter((p) =>
-        p.author.some(
-          (a) =>
-            a.given?.toLowerCase() === "edith" &&
-            a.family.toLowerCase() === "england"
-        )
-      );
-  },
-  loadingMessage: "Fetching papers, please wait",
 };
