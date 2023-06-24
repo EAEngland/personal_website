@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export interface TabInfo<Data = undefined> {
   render: (data: Data) => JSX.Element;
   name: string;
@@ -9,6 +7,11 @@ export interface TabInfo<Data = undefined> {
 
 export type Markdown = string;
 
+export interface Author {
+  first: string;
+  family: string;
+}
+
 export interface PubDate {
   year: number;
   month: number;
@@ -17,10 +20,10 @@ export interface PubDate {
 
 export interface Publication {
   title: string;
-  abstract: Markdown;
   about?: Markdown;
   published: PubDate;
-  doi: string;
+  doi?: string;
+  url?: string;
   journal: string;
-  authors: { first: string; family: string }[];
+  authors: Author[];
 }
