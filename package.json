@@ -70,7 +70,8 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -92,6 +93,7 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.18.1",
+    "gh-pages": "^5.0.0",
     "yaml": "^2.3.1",
     "yaml-loader": "^0.8.0"
   },
