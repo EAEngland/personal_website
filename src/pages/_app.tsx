@@ -21,6 +21,7 @@ const TABS: { name: string; url: string }[] = [
   { name: "Overview", url: "/" },
   { name: "Publications", url: "/publications" },
   { name: "Biography", url: "/bio" },
+  { name: "Projects", url: "/projects" },
 ];
 
 function Tabs(props: { children?: ReactNode }) {

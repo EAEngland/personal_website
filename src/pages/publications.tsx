@@ -6,6 +6,7 @@ import fs from "fs";
 import yaml from "yaml";
 import { useState } from "react";
 import { readAllWithFrontmatter } from "../util/md";
+import MoreBtn from "../MoreBtn";
 
 const PUBLICATATIONS_ROOT = path.join(process.cwd(), "src/publications");
 
@@ -52,12 +53,10 @@ function Paper(props: { pub: Publication }) {
           )}
           {pub["page-range"] && <PageRange range={pub["page-range"]} />}
           {pub.about && (
-            <button
-              className={style.moreBtn}
+            <MoreBtn
               onClick={() => setShowAbstract((s) => !s)}
-            >
-              <i>«{showAbstract ? "less" : "more"}»</i>
-            </button>
+              active={showAbstract}
+            />
           )}
         </p>
       </div>
