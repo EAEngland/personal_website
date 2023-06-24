@@ -26,7 +26,10 @@ $borderW: 6px;
     border-bottom: none;
 }
 
-.root:hover {
-    border-top-color: gray;
-    transition: 100ms;
+@media (hover: hover),
+(pointer: fine) {
+    .root:hover {
+        border-top-color: gray;
+        transition: 100ms;
+    }
 }
