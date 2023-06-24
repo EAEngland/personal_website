@@ -1,8 +1,43 @@
 .root {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     .pfp {
         flex: 1 0 1;
     }
+}
+
+.icon {
+    position: relative;
+    width: 1em;
+    height: 1em;
+}
+
+.flexFiller {
+    flex-grow: 1;
+}
+
+.info {
+    margin-left: 20px;
+}
+
+
+.externalContacts {
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+
+    .contactHeader {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.externalContact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
 }
