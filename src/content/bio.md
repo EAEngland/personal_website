@@ -1,4 +1,7 @@
-I am a Senior Lecturer in Social Policy and Practice in the School of Education and Social Policy at Cardiff Metropolitan University, with a PhD from the School of Geography and Planning at Cardiff University. 
-I write about homelessness, domestic abuse and neurodiversity (including autism and dementia). I explore how gender, sexuality and space can help us understand these better. I am especially interested in how we can use care ethics to think about these different parts of social life. 
-Awards/honours include: the Housing Studies Association Valerie Karn Prize 2021, a Women in Wales Audrey Jones Award 2021 and a Wales Online Diversity Award 2022. I was a 2021 European Sociological Association PhD Summer School attendee, and am a 2023 Welsh Crucible attendee.
-Prior to academic I worked in welfare rights/homelessness policy and research and I have strong links with the sector. I have produced research for organisations including Shelter Cymru, Platfform, Centre for Homelessness Impact, End Youth Homelessness Cymru and Crisis.
+I am a Senior Lecturer in Social Policy and Practice in the School of Education and Social Policy at Cardiff Metropolitan University. My PhD is from the School of Geography and Planning at Cardiff University (funders: UK Centre for Collaborative Housing Evidence).
+
+I write about workforce wellbeing (especially in the homelessness and domestic abuse sectors), sexuality and neurodiversity (including autism and dementia). I am especially interested in how space is experienced differently by different groups, and in exploring how we can use care ethics to think about reducing inequalities.
+
+Awards/honours include: the Housing Studies Association Valerie Karn Prize 2021, a Women in Wales Audrey Jones Award 2021, and a Wales Online Diversity Award 2022. I was a 2021 European Sociological Association PhD Summer School attendee and am a 2023 Welsh Crucible attendee.
+
+Prior to academia, I worked in welfare rights/homelessness policy and research, and I have strong links with the sector. I have produced research for organizations including Shelter Cymru, Platfform, Centre for Homelessness Impact, End Youth Homelessness Cymru, and Crisis.
