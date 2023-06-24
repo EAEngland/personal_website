@@ -7,6 +7,7 @@ $borderW: 6px;
     border-top-width: $borderW;
     border-top-style: solid;
     border-top-color: #00000000;
+    border-radius: 5px;
 
     a,
     a:visited {
@@ -25,12 +26,7 @@ $borderW: 6px;
     border-bottom: none;
 }
 
-/*.root:hover {
-    color: gray;
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 1px;
-    border-color: black;
-    border-style: solid;
-}*/
+.root:hover {
+    border-top-color: gray;
+    transition: 100ms;
+}

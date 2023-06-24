@@ -8,17 +8,6 @@ import { useState } from "react";
 
 const PUBLICATATIONS_ROOT = path.join(process.cwd(), "src/publications");
 
-function RenderAuthor(props: { author: string; last: boolean }) {
-  return (
-    <div>
-      <h4>
-        <i>{props.author}</i>
-        {!props.last && ","}
-      </h4>
-    </div>
-  );
-}
-
 function makePaperUrl(doi: string) {
   return `https://dx.doi.org/${doi}`;
 }
@@ -34,12 +23,17 @@ function Paper(props: { pub: Publication }) {
   }
   return (
     <div className={style.paper}>
-      <div>
+      <div className={style.ref}>
         {authors}. {pub.published.year}. '{pub.title}'. {pub.journal} (
         <a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)
         <div>
           {pub.about && (
-            <button onClick={() => setShowAbstract((s) => !s)}>More</button>
+            <button
+              className={style.moreBtn}
+              onClick={() => setShowAbstract((s) => !s)}
+            >
+              <i>«{showAbstract ? "less" : "more"}»</i>
+            </button>
           )}
         </div>
       </div>
