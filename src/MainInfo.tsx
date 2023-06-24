@@ -6,9 +6,14 @@ import orcidIco from "./assets/icons/orcid.svg";
 import rsGateIco from "./assets/icons/researchGate.svg";
 import gsScholarIco from "./assets/icons/googleScholar.svg";
 import Image, { StaticImageData } from "next/image";
+import pfp from "./assets/pfp.webp";
 
 function ProfilePic(props: {}) {
-  return <div className={style.pfp}>Profile Picture Placeholder</div>;
+  return (
+    <div className={style.pfp}>
+      <Image src={pfp} alt="Profile Picture" fill />
+    </div>
+  );
 }
 function Icon(props: any) {
   return (
@@ -81,9 +86,13 @@ export function ExternalContacts(props: { bottom?: boolean }) {
 function ContactDetails() {
   return (
     <div className={style.contacts}>
-      <div>email</div>
-      <div>telephone</div>
-      <div>etc</div>
+      <div>
+        <address>
+          <a href="mailto:EAAEngland@CardiffMet.ac.uk">
+            EAAEngland@CardiffMet.ac.uk
+          </a>
+        </address>
+      </div>
     </div>
   );
 }

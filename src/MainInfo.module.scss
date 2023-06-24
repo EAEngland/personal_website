@@ -4,7 +4,10 @@
     align-items: center;
 
     .pfp {
-        flex: 1 0 1;
+        position: relative;
+        flex-grow: 1;
+        aspect-ratio: 2437/2618;
+        margin: 20px;
     }
 }
 
