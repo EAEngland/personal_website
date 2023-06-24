@@ -22,5 +22,5 @@ export interface Publication {
   published: PubDate;
   doi: string;
   journal: string;
-  authors: string[];
+  authors: { first: string; family: string }[];
 }

@@ -3,9 +3,12 @@ abstract: This is an _example_ paper
 page-range:
   from: 44
   to: 55
+published:
+  day: 23
+  month: 12
+  year: 1969
 article-number: 14
 about: Here is even more information
 doi: 10.1032/2301.331c
 journal: Fancy Journal Of Examples
-authors: [Tasha Example, Joanna Example, Sasha Example]
-
+authors: [{ first: Tasha, family: Example }, { first: Joanna, family: Example }, { first: Sasha, family: Example }]

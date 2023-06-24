@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import path from "path";
 import fs from "fs";
 import yaml from "yaml";
+import { useState } from "react";
 
 const PUBLICATATIONS_ROOT = path.join(process.cwd(), "src/publications");
 
@@ -23,28 +24,31 @@ function makePaperUrl(doi: string) {
 }
 
 function Paper(props: { pub: Publication }) {
+  const [showAbstract, setShowAbstract] = useState(false);
   const pub = props.pub;
+  let authors = `${pub.authors[0].family}, ${pub.authors[0].first
+    .at(0)
+    ?.toUpperCase()}`;
+  if (pub.authors.length > 1) {
+    authors += " et al";
+  }
   return (
     <div className={style.paper}>
       <div>
-        <h2>{pub.title}</h2>
-        <h3>
-          <a href={makePaperUrl(pub.doi)}>Journal</a>
-        </h3>
+        {authors}. {pub.published.year}. '{pub.title}'. {pub.journal} (
+        <a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)
+        <div>
+          {pub.about && (
+            <button onClick={() => setShowAbstract((s) => !s)}>More</button>
+          )}
+        </div>
       </div>
-      {pub.abstract && (
+      {showAbstract && pub.about && (
         <div className={style.abstract}>
-          <h3>Abstract</h3>
-          <ReactMarkdown>{pub.abstract}</ReactMarkdown>
+          <h3>About</h3>
+          <ReactMarkdown>{pub.about}</ReactMarkdown>
         </div>
       )}
-      <div className={style.authors}>
-        {pub.authors.map((a, i) => (
-          <div key={i}>
-            <RenderAuthor author={a} last={i === pub.authors.length - 1} />
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
