@@ -1,20 +1,28 @@
+@use "../colours" as c;
+
+$borderW: 6px;
+
 .root {
     color: black;
+    border-top-width: $borderW;
+    border-top-style: solid;
+    border-top-color: #00000000;
+
+    a,
+    a:visited {
+        color: unset;
+        text-decoration: none;
+    }
 }
 
-.active::before {
-    height: 2px;
-    width: 100%;
-    background-color: red;
-}
 
 .active {
-    border-left: 1px;
-    border-right: 1px;
-    border-top: 0px;
-    border-bottom: 0px;
-    border-color: gray;
-    border-style: solid;
+    border-top-width: $borderW;
+    border-top-color: c.$highlight;
+    border-top-style: solid;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
 }
 
 /*.root:hover {

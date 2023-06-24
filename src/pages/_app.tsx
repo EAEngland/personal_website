@@ -19,6 +19,7 @@ type AppPropsWithLayout = AppProps & {
 const TABS: { name: string; url: string }[] = [
   { name: "Overview", url: "/" },
   { name: "Publications", url: "/publications" },
+  { name: "Biography", url: "/bio" },
 ];
 
 function Tabs(props: { children?: ReactNode }) {
@@ -27,7 +28,7 @@ function Tabs(props: { children?: ReactNode }) {
     <Tab
       content={t.name}
       active={
-        router.asPath === "/"
+        t.url === "/"
           ? router.asPath === t.url
           : router.asPath.startsWith(t.url)
       }
