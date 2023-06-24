@@ -56,7 +56,8 @@ const EXTERNAL_CONTACTS: ExternalContact[] = [
   },
 ];
 
-function ExternalContacts() {
+export function ExternalContacts(props: { bottom?: boolean }) {
+  const bottom = props.bottom ?? false;
   const contactEls = EXTERNAL_CONTACTS.map((c) => (
     <div className={style.externalContact} key={c.alt}>
       <Icon src={c.icon} alt={c.alt} />
@@ -64,8 +65,12 @@ function ExternalContacts() {
     </div>
   ));
   return (
-    <div className={style.externalContacts}>
-      <h4 className={style.contactHeader}>External</h4>
+    <div
+      className={`${style.externalContacts} ${
+        bottom ? style.botContacts : style.topContacts
+      }`}
+    >
+      <h4 className={style.contactHeader}>Profiles</h4>
       <hr />
       <div>
         <div>{contactEls}</div>

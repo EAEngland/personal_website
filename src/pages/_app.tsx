@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import type { AppProps } from "next/app";
 import React from "react";
 import style from "../App.module.scss";
-import MainInfo from "../MainInfo";
+import MainInfo, { ExternalContacts } from "../MainInfo";
 import { TabInfo } from "../Types";
 import Tab from "../widgets/Tab";
 import { useRouter } from "next/router";
@@ -61,6 +61,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
       <Tabs>
         <Component {...pageProps} />
       </Tabs>
+      <ExternalContacts bottom />
     </div>
   );
 }
