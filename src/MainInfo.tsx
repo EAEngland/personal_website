@@ -103,9 +103,7 @@ export default function MainInfo(props: {}) {
       <ProfilePic />
       <div className={style.info}>
         <div className={style.infotitle}>
-          <h2>Dr Edith England</h2>
-          <h4>Lecturer</h4>
-          <h4>School of etc</h4>
+          <h1>Dr Edith England</h1>
         </div>
         <ContactDetails />
       </div>
