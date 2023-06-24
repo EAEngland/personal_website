@@ -5,4 +5,4 @@ I write about bureaucracy, sexuality and neurodiversity (including autism and de
 Awards/honours include: the Housing Studies Association Valerie Karn Prize 2021, a [Women in Wales Audrey Jones Award 2021 awardee](https://walesassemblyofwomen.co.uk/awards.html), and a Wales Online Diversity Award 2022. I was a [2020 European Sociological Association PhD Summer School attendee](https://www.europeansociology.org/european-sociologist/issue/46/from-esa/8a87a578-895c-4bc6-8aac-3f16f62b19fa) and am a [2023 Welsh Crucible attendee.](https://welshcrucible.org.uk/)
 
 
-Prior to academia, I worked in welfare rights/homelessness policy and research, and I have strong links with the sector. I have produced research for organizations including Shelter Cymru, Platfform, Centre for Homelessness Impact, End Youth Homelessness Cymru, and Crisis.
+Prior to academia, I worked in welfare rights/homelessness policy and research. I have produced research for organizations including Shelter Cymru, Platfform, Centre for Homelessness Impact, End Youth Homelessness Cymru, and Crisis.
