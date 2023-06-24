@@ -1,6 +1,11 @@
 title: Example
 abstract: This is an _example_ paper
+page-range:
+  from: 44
+  to: 55
+article-number: 14
 about: Here is even more information
 doi: 10.1032/2301.331c
 journal: Fancy Journal Of Examples
 authors: [Tasha Example, Joanna Example, Sasha Example]
+
