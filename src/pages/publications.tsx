@@ -26,6 +26,14 @@ function formatAuthors(authors: Author[]) {
     return firstSet + " and " + formatAuthor(authors[authors.length - 1]);
   }
 }
+function PageRange(props: { range: { from: number; to: number } }) {
+  return (
+    <>
+      {" "}
+      pp. {props.range.from}-{props.range.to}
+    </>
+  );
+}
 
 function Paper(props: { pub: Publication }) {
   const [showAbstract, setShowAbstract] = useState(false);
@@ -42,6 +50,7 @@ function Paper(props: { pub: Publication }) {
               (<a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)
             </>
           )}
+          {pub["page-range"] && <PageRange range={pub["page-range"]} />}
           {pub.about && (
             <button
               className={style.moreBtn}
@@ -54,7 +63,6 @@ function Paper(props: { pub: Publication }) {
       </div>
       {showAbstract && pub.about && (
         <div className={style.abstract}>
-          <h3>About</h3>
           <ReactMarkdown>{pub.about}</ReactMarkdown>
         </div>
       )}
@@ -87,6 +95,14 @@ export async function getStaticProps() {
 }
 
 export default function Publications(props: { papers: Publication[] }) {
-  const paperEls = props.papers.map((p) => <Paper key={p.title} pub={p} />);
-  return <div className={style.papers}>{paperEls}</div>;
+  const paperEls = props.papers.map((p) => (
+    <li>
+      <Paper key={p.title} pub={p} />
+    </li>
+  ));
+  return (
+    <div className={style.papers}>
+      <ul>{paperEls}</ul>
+    </div>
+  );
 }

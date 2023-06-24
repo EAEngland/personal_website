@@ -8,6 +8,7 @@ import MainInfo from "../MainInfo";
 import { TabInfo } from "../Types";
 import Tab from "../widgets/Tab";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -52,6 +53,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return getLayout(
     <div className={style.app}>
+      <Head>
+        <meta name="description" content="Personal website for Edith England" />
+        <title>Edith England</title>
+      </Head>
       <MainInfo />
       <Tabs>
         <Component {...pageProps} />
