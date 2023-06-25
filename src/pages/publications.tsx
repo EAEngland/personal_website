@@ -98,8 +98,8 @@ export async function getStaticProps() {
 
 export default function Publications(props: { papers: Publication[] }) {
   const paperEls = props.papers.map((p) => (
-    <li>
-      <Paper key={p.title} pub={p} />
+    <li key={p.doi ?? p.title}>
+      <Paper pub={p} />
     </li>
   ));
   return (
