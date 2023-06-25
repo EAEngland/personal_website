@@ -2,7 +2,7 @@
 ---
 title:Homelessness among trans people in Wales
 ---
-Trans people are at [elevated risk of homelessness](https://www.scottishtrans.org/wp-content/uploads/2013/03/trans_mh_study.pdf), but very little work exists exploring their distinct experiences. This Shelter Cymru/ Welsh Government study interviewed 28 trans people about their experiences of homelessness in Wales. We were interested in how well services were meeting trans people’s needs, but also in experiences of homelessness more broadly. If people could not get help from services, who did they seek help from? What forms of community support existed, and how might they be helped to provide in-community assistance? We looked at routes into homelessness, obstacles to resolving homelessness, and ways to improve services and include community expertise.
+Trans people are at [greater risk of homelessness](https://www.scottishtrans.org/wp-content/uploads/2013/03/trans_mh_study.pdf), but very little work exists exploring their distinct experiences. This Shelter Cymru/ Welsh Government study interviewed 28 trans people about their experiences of homelessness in Wales. We were interested in how well services were meeting trans people’s needs, but also in experiences of homelessness more broadly. If people could not get help from services, who did they seek help from? What forms of community support existed, and how might they be helped to provide in-community assistance? We looked at routes into homelessness, obstacles to resolving homelessness, and ways to improve services and include community expertise.
 
 **Outputs**
 
