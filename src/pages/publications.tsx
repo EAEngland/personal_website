@@ -8,7 +8,10 @@ import { useState } from "react";
 import { readAllWithFrontmatter } from "../util/md";
 import MoreBtn from "../MoreBtn";
 
-const PUBLICATATIONS_ROOT = path.join(process.cwd(), "src/publications");
+const PUBLICATATIONS_ROOT = path.join(
+  process.cwd(),
+  "src/content/publications"
+);
 
 function makePaperUrl(doi: string) {
   return `https://dx.doi.org/${doi}`;
