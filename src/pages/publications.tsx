@@ -26,7 +26,7 @@ function formatAuthors(authors: Author[]) {
   } else if (authors.length === 1) {
     return formatAuthor(authors[0]);
   } else {
-    let firstSet = authors.slice(0, -2).map(formatAuthor).join(", ");
+    let firstSet = authors.slice(0, -1).map(formatAuthor).join(", ");
     return firstSet + " and " + formatAuthor(authors[authors.length - 1]);
   }
 }
