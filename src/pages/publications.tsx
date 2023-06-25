@@ -48,8 +48,9 @@ function Paper(props: { pub: Publication }) {
       <div className={style.ref}>
         <p>
           {authors}. {pub.published.year}. <a href={pub.url}>'{pub.title}'</a>.{" "}
-          {pub.journal}{" "}
-          {pub["page-range"] && <PageRange range={pub["page-range"]} />}
+          {pub.journal},
+          {pub.volume && pub.issue && ` ${pub.volume}(${pub.issue}), `}
+          {pub["page-range"] && <PageRange range={pub["page-range"]} />}{" "}
           {pub.doi && (
             <>
               (<a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)

@@ -27,4 +27,6 @@ export interface Publication {
   journal: string;
   authors: Author[];
   "page-range"?: { from: number; to: number };
+  volume?: number;
+  issue?: number;
 }
