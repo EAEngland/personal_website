@@ -17,16 +17,32 @@ export interface PubDate {
   month: number;
   day: number;
 }
+export type PubType = "thesis" | "paper";
+export const DEFAULT_PUB_TYPE: PubType = "paper";
 
-export interface Publication {
+interface PubBase {
   title: string;
   about?: Markdown;
   published: PubDate;
-  doi?: string;
   url?: string;
+}
+export type ThesisPub = {
+  type: "thesis";
+  author: Author;
+  level: string;
+  unpublished: boolean;
+  city: string;
+  university: string;
+} & PubBase;
+
+export type PaperPub = {
+  type: "paper" | undefined;
+  doi?: string;
   journal: string;
   authors: Author[];
   "page-range"?: { from: number; to: number };
   volume?: number;
   issue?: number;
-}
+} & PubBase;
+
+export type Publication = ThesisPub | PaperPub;

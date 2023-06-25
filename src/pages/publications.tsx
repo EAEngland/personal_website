@@ -1,4 +1,4 @@
-import { Publication, Author } from "../Types";
+import { Publication, Author, PaperPub, ThesisPub } from "../Types";
 import style from "../tabs/Research.module.scss";
 import ReactMarkdown from "react-markdown";
 import path from "path";
@@ -39,23 +39,27 @@ function PageRange(props: { range: { from: number; to: number } }) {
   );
 }
 
-function Paper(props: { pub: Publication }) {
+function Thesis({ pub }: { pub: ThesisPub }) {
+  const author = formatAuthor(pub.author);
+  return (
+    <>
+      {author}., {pub.published.year} <i>'{pub.title}'</i>{" "}
+      <i>
+        {pub.unpublished && ", Unpublished"} {pub.level} thesis
+      </i>
+      , {pub.university}, {pub.city}{" "}
+    </>
+  );
+}
+function RenderPublication({ pub }: { pub: Publication }) {
   const [showAbstract, setShowAbstract] = useState(false);
-  const pub = props.pub;
-  let authors = formatAuthors(pub.authors);
+
   return (
     <div className={style.paper}>
       <div className={style.ref}>
         <p>
-          {authors}. {pub.published.year}. <a href={pub.url}>'{pub.title}'</a>.{" "}
-          <i>{pub.journal}</i>,
-          {pub.volume && pub.issue && ` ${pub.volume}(${pub.issue}), `}
-          {pub["page-range"] && <PageRange range={pub["page-range"]} />}{" "}
-          {pub.doi && (
-            <>
-              (<a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)
-            </>
-          )}
+          {pub.type === "thesis" ? <Thesis pub={pub} /> : <Paper pub={pub} />}
+
           {pub.about && (
             <MoreBtn
               onClick={() => setShowAbstract((s) => !s)}
@@ -75,6 +79,23 @@ function Paper(props: { pub: Publication }) {
         </noscript>
       )}
     </div>
+  );
+}
+
+function Paper({ pub }: { pub: PaperPub }) {
+  const authors = formatAuthors(pub.authors);
+  return (
+    <>
+      {authors}., {pub.published.year}. <a href={pub.url}>'{pub.title}'</a>.{" "}
+      <i>{pub.journal}</i>,
+      {pub.volume && pub.issue && ` ${pub.volume}(${pub.issue}), `}
+      {pub["page-range"] && <PageRange range={pub["page-range"]} />}{" "}
+      {pub.doi && (
+        <>
+          (<a href={makePaperUrl(pub.doi)}>{pub.doi}</a>)
+        </>
+      )}
+    </>
   );
 }
 
@@ -101,8 +122,8 @@ export default function Publications(props: { papers: Publication[] }) {
   const paperEls = props.papers
     .sort((a, b) => b.published.year - a.published.year)
     .map((p) => (
-      <li key={p.doi ?? p.title}>
-        <Paper pub={p} />
+      <li key={p.title}>
+        <RenderPublication pub={p} />
       </li>
     ));
   return (

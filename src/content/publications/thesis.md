@@ -1,14 +1,15 @@
 ---
+type: thesis
 title: 'Abandonment, abjectiﬁcation, activation and responsibilisation: experiences of the shift towards universal conditionality within the Welsh homelessness system following the Housing (Wales) Act 2014'
-authors:
-    - first: Edith
-      family: England
+author:
+    first: Edith
+    family: England
+unpublished: true
+level: PhD
+university: School of Geography and Planning, Cardiff University
+city: Cardiff
 journal: Unpublished PhD thesis
-page-range:
-    from: School of Geography and Planning
-    to: Cardiff University
 url: https://orca.cardiff.ac.uk/id/eprint/138702/
-doi: 
 published:
     year: 2021
     month: 2
