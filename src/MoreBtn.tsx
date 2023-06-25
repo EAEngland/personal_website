@@ -6,7 +6,7 @@ export default function MoreBtn(props: {
 }) {
   return (
     <button className={style.moreBtn} onClick={props.onClick}>
-      <i>«{props.active ? "hide" : "click for more"}»</i>
+      <i>«{props.active ? "hide" : "read more"}»</i>
     </button>
   );
 }
