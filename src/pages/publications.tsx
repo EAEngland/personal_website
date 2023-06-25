@@ -97,11 +97,13 @@ export async function getStaticProps() {
 }
 
 export default function Publications(props: { papers: Publication[] }) {
-  const paperEls = props.papers.map((p) => (
-    <li key={p.doi ?? p.title}>
-      <Paper pub={p} />
-    </li>
-  ));
+  const paperEls = props.papers
+    .sort((a, b) => b.published.year - a.published.year)
+    .map((p) => (
+      <li key={p.doi ?? p.title}>
+        <Paper pub={p} />
+      </li>
+    ));
   return (
     <div className={style.papers}>
       <ul>{paperEls}</ul>
