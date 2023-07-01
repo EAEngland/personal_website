@@ -16,7 +16,7 @@ lives, and how many LGBTQ+ people are at risk of homelessness. It will also
 improve our understanding of how LGBTQ+ homelessness is geographically
 distributed (where LGBTQ+ people at risk of homelessness live), and how age and
 identity might affect risk of homelessness. The survey is running until autumn
-2023 and open to all UK resident LGBTQ+ adults (You can complete it here  xyz)
+2023 and open to all UK resident LGBTQ+ adults You can complete it [here](https://cardiffmet.eu.qualtrics.com/jfe/form/SV_5ilAS1eyIZwEAHc)
 
 ## Phase 2: Queer narratives of home/lessness
 
@@ -24,7 +24,7 @@ Starting in early 2024, we will be looking at how loss of home interacts with
 geographic mobility. Queer migration, especially rural to urban, has a dual
 resonance. Among policy-makers it has largely been understood in terms of loss
 and desperation, while among queer people it has cultural resonance as a theme
-of hope, beginning and becoming (<https://www.youtube.com/watch?v=88sARuFu-tc>).
+of [hope, beginning and becoming](<https://www.youtube.com/watch?v=88sARuFu-tc>).
 It is complicated by homelessness policies which do not recognise aspects of
 queer experience, such as the importance of found families. We will use
 narrative mapping to explore the importance of space, place, time and identity
