@@ -9,6 +9,4 @@ sdfs
 ## Phase 2: Interviews with workers in the sector
 sdfs
 
-## Outputs
 
-We are currently in the process of producing a initial report. 
