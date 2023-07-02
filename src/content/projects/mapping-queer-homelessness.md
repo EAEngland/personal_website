@@ -34,3 +34,5 @@ to queer people who have experienced homelessness.
 
 Read our blog post for the UK Centre for Collaborative Housing Impact - [What don't we know about LGBTQ+ homelessness (and how you can help us address that)](https://housingevidence.ac.uk/what-dont-we-know-about-lgbtq-homelessness-and-how-you-can-help-us-address-that/)
 
+In May, we gave a talk for the [Queer Populations and Policies Network](https://sites.google.com/view/qpapnetwork/home). We asked [Can we queer social policy (and should we?)](https://www.researchgate.net/publication/371984900_QPaP_Can_we_queer_social_policy_and_should_we?utm_source=twitter&rgutm_meta1=eHNsLUhpczZ2MU9QVWd6WUdCcW5RV1VvNDBWYndkVE9kbFJaSkt3ZGFVbERwdzFkcit5S0p1VUxya25tMWpIOVJxaEJsYnNad2RjbTg0SytiZ0ZMTWk5V0xFZz0%3D)
+
