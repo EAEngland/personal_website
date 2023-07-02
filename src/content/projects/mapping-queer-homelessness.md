@@ -29,3 +29,8 @@ It is complicated by homelessness policies which do not recognise aspects of
 queer experience, such as the importance of found families. We will use
 narrative mapping to explore the importance of space, place, time and identity
 to queer people who have experienced homelessness.
+
+## Outputs
+
+Read our blog post for the UK Centre for Collaborative Housing Impact - [What don't we know about LGBTQ+ homelessness (and how you can help us address that)](https://housingevidence.ac.uk/what-dont-we-know-about-lgbtq-homelessness-and-how-you-can-help-us-address-that/)
+
