@@ -1,5 +1,5 @@
 ---
-title: 2022-2024 - Mapping Queer Homelessness
+title: Mapping Queer Homelessness (2022-2024)
 ---
 
 
